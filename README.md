@@ -94,6 +94,14 @@ VITE_HF_TOKEN=your_huggingface_token
 
 ---
 
+# 🎥 Demo
+
+## AI Recipe Generation Demo
+
+![Demo](./public/Chef-recipe-demo.gif)
+
+---
+
 # 🧠 React Concepts Used
 
 - Functional Components
