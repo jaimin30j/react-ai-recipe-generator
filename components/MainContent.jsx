@@ -22,11 +22,17 @@ export default function MainContent() {
         setLoading(false)
     }
 
+    function clearIngredients() {
+        setIngredients([])
+        setRecipe("")
+    }
+
     return (
         <main className="container">
             <form className="add-ingredient-form" action={submitIngredient}>
                 <input type="text" name="ingredient" placeholder="e.g. oregano" aria-label="Add ingredient" required />
-                <button>Add Ingredient</button>
+                <button className="add">Add Ingredient</button>
+                {ingredients.length > 0 && <button className="clear" onClick={clearIngredients}>Clear</button>}
             </form>
             {ingredients.length > 0 && 
                 <IngredientsList  
