@@ -10,6 +10,14 @@ export default function MainContent() {
 
     const [loading, setLoading] = useState(false);
 
+    const recipeSection = React.useRef(null)
+
+    React.useEffect(() => {
+        if (recipe !== "" && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView({ behavior: "smooth" })
+        }
+    }, [recipe])
+
     function submitIngredient(formData) {
         const newIngredient = formData.get("ingredient" )
         setIngredients([...ingredients, newIngredient])
@@ -36,6 +44,7 @@ export default function MainContent() {
             </form>
             {ingredients.length > 0 && 
                 <IngredientsList  
+                    ref={recipeSection}
                     ingredients={ingredients} 
                     getRecipe={getRecipe} 
                 />}
